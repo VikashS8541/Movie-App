@@ -1,5 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #228EE5;
+    --light-white: #EBFAFF;
+    --white: #fff;
+    --dark-color: #030A1B;
+}
+
+body {
+    color: var(--white);
+    background: linear-gradient(248.7deg, var(--dark-color) 68.64%, #9747FF 206.69%);
+    font-family: 'Lato';
+}
+
+.container {
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+.blue-btn,
+.outline-btn {
+    background: var(--primary);
+    border-radius: 28px;
+    padding: 10px 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: var(--light-white);
+    border: 1px solid transparent;
+    transition: all 0.5s ease;
+}
+
+.outline-btn {
+    background: none;
+    border: 1px solid var(--primary);
+}
+
+.blue-btn:hover {
+    background: none;
+    border: 1px solid var(--primary);
+}
+
+.outline-btn:hover {
+    background: var(--primary);
+    border: 1px solid transparent;
+}
+
+.padding-top {
+    padding-top: 150px;
+}
+
+.text-blue {
+    color: var(--primary);
+}
+
+.golden-text-box h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(267.78deg, rgba(0, 0, 0, 0.8) 0.35%, rgba(0, 0, 0, 0.4) 99.15%);
+    border: 1px solid var(--light-white);
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: clamp(24px, 5vw, 48px);
+    line-height: clamp(30px, 6vw, 58px);
+    text-align: center;
+    color: var(--light-white);
+    width: max-content;
+    padding: 31px 85px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: default;
+}
+
+.tab-slider {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background: var(--dark-color);
+    border: 1px solid var(--primary);
+    border-radius: 28px;
+}
+
+.tab-slider:focus {
+    outline: none;
+}
+
+.tab-slider button {
+    padding: 14px 20px;
+}
+
+.tab-slider button.button-1 {
+    border-radius: 28px 0 0 28px;
+}
+
+.tab-slider button.button-2 {
+    border-radius: 0px 28px 28px 0px;
+}
+
+.dark-blue-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 64px;
+    gap: 10px;
+    background: var(--dark-color);
+    border-radius: 12px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: var(--light-white);
+}
+
+.accordion-boxes {
+    padding: 10px 23px 10px 32px;
+    gap: 25px;
+    border: 1px solid #E93F9C;
+    border-radius: 24px !important;
+    background: none !important;
+}
+
+.accordion-boxes h3 button span {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: var(--light-white);
+}
+
+.accordion-boxes svg {
+    color: var(--light-white);
+}
+
+.accordion-boxes .accordion-text {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--light-white);
+}
+
+
+.advance-filter-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23228EE6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+}
+
+.movie-pagination-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 42px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid #163760;
+    background: #081A33;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.movie-pagination-item.active .movie-pagination-link {
+    background: #228EE6;
+    border-color: #228EE6;
+    color: #fff;
+}
+
+.movie-pagination-item.disabled .movie-pagination-link {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.movie-pagination-link:hover {
+    background: #163760;
+}
+
+
+.movieSwiper .swiper-button-next,
+.movieSwiper .swiper-button-prev {
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.movieSwiper .swiper-button-next::after,
+.movieSwiper .swiper-button-prev::after {
+    font-size: 18px;
+    font-weight: bold;
+}
