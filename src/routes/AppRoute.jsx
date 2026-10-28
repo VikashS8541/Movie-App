@@ -17,7 +17,8 @@ const SingleMovie = lazy(() => import("../pages/SingleMovie"));
 const SingleSeries = lazy(() => import("../pages/SingleSeries"));
 const Trends = lazy(() => import("../pages/Trends"));
 const SingleTrend = lazy(() => import("../pages/SingleTrend"));
-const SingleUpcoming = lazy(() => import("../pages/SingleUpcoming"));
+const Upcoming = lazy(() => import("../pages/Upcoming"));
+const SingleUpcoming =lazy(() => import("../pages/SingleUpcoming"));
 
 const AppRoute = () => {
   return (
@@ -39,6 +40,7 @@ const AppRoute = () => {
           </Route>
 
           <Route path="upcoming">
+            <Route index element={<Upcoming />} />
             <Route path=":id" element={<SingleUpcoming />} />
           </Route>
 

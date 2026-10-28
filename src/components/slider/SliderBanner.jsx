@@ -75,18 +75,18 @@ const SliderBanner = ({ buttonNav = [], slides = [] }) => {
         {/* Content Container */}
         <div className="h-full slider-content-box relative z-10">
           <div className="container h-full">
-            <div className="content-inner-box h-[90%] flex items-end justify-between">
+            <div className="content-inner-box h-[90%] pt-24 flex flex-col lg:flex-row items-start lg:items-end justify-end lg:justify-between gap-6">
               {/* Left Content */}
-              <div className="max-w-xl text-white content-banner-box">
-                <h1 className="text-6xl font-bold mb-5">{title}</h1>
-                <p className="text-gray-300 leading-7 mb-6">{description}</p>
-                <div className="flex items-center gap-4 mb-8">
+              <div className="max-w-xl w-full text-white content-banner-box">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-3 md:mb-5 line-clamp-2">{title}</h1>
+                <p className="text-gray-300 leading-7 mb-4 md:mb-6 line-clamp-3 md:line-clamp-none">{description}</p>
+                <div className="flex flex-wrap items-center gap-3 md:gap-4 mb-4 md:mb-8">
                   <span className="text-yellow-400 text-lg">{renderStars(rating)}</span>
                   <span className="bg-yellow-400 text-black px-2 py-1 rounded font-bold">IMDb</span>
                   <span>{rating}/10</span>
                   <span className="text-red-500 font-semibold">{platform}</span>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex flex-wrap items-center gap-3 md:gap-4">
                   {buttonNav && buttonNav.length > 0 &&
                     buttonNav.map((item) => (
                       <Link key={item?.id} to={item?.path} className={item?.className}>
@@ -97,7 +97,7 @@ const SliderBanner = ({ buttonNav = [], slides = [] }) => {
               </div>
 
               {/* Right Thumbnail Slider */}
-              <div className="w-[500px] thumbnail-slider">
+              <div className="w-full max-w-[500px] thumbnail-slider">
                 <Swiper
                   slidesPerView={3}
                   centeredSlides={true}
@@ -131,7 +131,7 @@ const SliderBanner = ({ buttonNav = [], slides = [] }) => {
                         <button
                           type="button"
                           onClick={() => handleThumbnailClick(movie, index)}
-                          className={`w-full h-[200px] rounded-2xl overflow-hidden transition-transform duration-500 ease-out ${
+                          className={`w-full h-[120px] md:h-[200px] rounded-2xl overflow-hidden transition-transform duration-500 ease-out ${
                             isActive
                               ? "scale-105 opacity-100"
                               : "scale-95 opacity-60 hover:opacity-90"

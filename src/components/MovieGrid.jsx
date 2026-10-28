@@ -33,9 +33,9 @@ const MovieGrid = ({ linkShare = "/", title, data = [] }) => {
   };
 
   return (
-    <section className="movie-grid-main py-16 min-h-screen">
+    <section className="movie-grid-main py-8 md:py-16 min-h-screen">
       <div className="movie-grid-inner">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-8">
           {currentMovies.map((movie) => {
             const imageSrc =
               movie.image ||
@@ -63,7 +63,7 @@ const MovieGrid = ({ linkShare = "/", title, data = [] }) => {
                       decoding="async"
                       src={imageSrc}
                       alt={movieTitle}
-                      className="w-full h-[380px] object-cover rounded-2xl transition duration-500 group-hover:scale-105"
+                      className="w-full h-[240px] sm:h-[300px] lg:h-[380px] object-cover rounded-2xl transition duration-500 group-hover:scale-105"
                     />
                   </Link>
                   <div className="absolute z-0 inset-0 bg-black/15 pointer-events-none"></div>

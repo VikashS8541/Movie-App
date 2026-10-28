@@ -5,9 +5,9 @@ import useMovieData from "../context/useMovieData";
 const PricingList = () => {
   const { pricingData } = useMovieData();
   return (
-    <section className="pricing-section py-20 relative">
+    <section className="pricing-section py-10 md:py-20 relative">
       <div className="container">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 items-center">
           {pricingData.map((item) => (
             <div
               key={item.id}
@@ -23,9 +23,9 @@ const PricingList = () => {
               <div className="absolute top-1/2 -translate-y-1/2 -left-4 w-8 h-8 bg-[#020b2d] rounded-full" />
               <div className="absolute top-1/2 -translate-y-1/2 -right-4 w-8 h-8 bg-[#020b2d] rounded-full" />
 
-              <div className="relative z-10 flex flex-col items-center justify-center text-center px-8 py-16">
+              <div className="relative z-10 flex flex-col items-center justify-center text-center px-5 sm:px-8 py-10 md:py-16">
                 <h2
-                  className={`text-5xl font-semibold mb-4 ${
+                  className={`text-3xl md:text-5xl font-semibold mb-4 ${
                     item.active ? "text-white" : "text-[#228EE5]"
                   }`}
                 >
@@ -33,7 +33,7 @@ const PricingList = () => {
                 </h2>
 
                 <p
-                  className={`text-2xl mb-10 ${
+                  className={`text-xl md:text-2xl mb-6 md:mb-10 ${
                     item.active ? "text-white" : "text-[#228EE5]"
                   }`}
                 >
@@ -43,13 +43,13 @@ const PricingList = () => {
                 <div className="w-full border-t border-dashed border-[#228EE5] mb-10" />
 
                 {item.oldPrice && (
-                  <h3 className="text-5xl text-white/70 line-through mb-4">
+                  <h3 className="text-3xl md:text-5xl text-white/70 line-through mb-4">
                     {item.oldPrice}
                   </h3>
                 )}
 
                 <h3
-                  className={`text-6xl font-semibold mb-6 ${
+                  className={`text-4xl md:text-6xl font-semibold mb-6 ${
                     item.active ? "text-white" : "text-[#228EE5]"
                   }`}
                 >

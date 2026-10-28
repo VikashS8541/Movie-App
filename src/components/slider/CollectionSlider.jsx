@@ -37,12 +37,12 @@ const CollectionSlider = ({ title, linkShare = "/collection", collectionsData = 
       <div className="container">
         <div className="flex flex-col lg:flex-row items-start lg:items-center mb-10 justify-between w-full title-links relative z-1 gap-5">
           <div>
-            <h2 className="text-5xl text-white font-semibold">{title}</h2>
+            <h2 className="text-3xl md:text-5xl text-white font-semibold">{title}</h2>
           </div>
         </div>
       </div>
 
-      <div className="ml-8 swipper-wrapper-box">
+      <div className="ml-4 md:ml-8 swipper-wrapper-box">
         <Swiper
           slidesPerView={5}
           spaceBetween={25}
@@ -79,7 +79,7 @@ const CollectionSlider = ({ title, linkShare = "/collection", collectionsData = 
 
                   <div className="absolute z-0 inset-0 bg-black/15 pointer-events-none"></div>
                   <div className="absolute bottom-6 left-6 text-white">
-                    <h3 className="text-3xl font-semibold">{titleText}</h3>
+                    <h3 className="text-xl md:text-3xl font-semibold">{titleText}</h3>
                   </div>
                 </div>
               </SwiperSlide>

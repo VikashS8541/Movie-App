@@ -55,7 +55,7 @@ const SingleCollection = () => {
 
       <section className="collection-detail py-16">
         <div className="container">
-          <h1 className="text-5xl font-semibold text-white mb-6">{collection.name}</h1>
+          <h1 className="text-3xl md:text-5xl font-semibold text-white mb-6">{collection.name}</h1>
           <p className="text-gray-300 leading-8 max-w-3xl">{collection.overview || collection.description || "No description available."}</p>
           <div className="mt-10">
             <button

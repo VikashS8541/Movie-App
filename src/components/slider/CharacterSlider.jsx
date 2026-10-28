@@ -23,8 +23,8 @@ const CharacterSlider = ({ title = "Characters & Directors", item }) => {
   return (
     <section className="character-cast-slider py-10 relative">
       <div className="container">
-        <div className="flex items-center mb-10 justify-between w-full title-links relative z-1">
-          <h2 className="text-5xl text-white font-semibold">{title}</h2>
+        <div className="flex flex-wrap gap-4 items-center mb-6 md:mb-10 justify-between w-full title-links relative z-1">
+          <h2 className="text-3xl md:text-5xl text-white font-semibold">{title}</h2>
           {tabSlider.length > 0 && (
             <div className="tab-slider flex items-center justify-center">
               {tabSlider.map((tab) => (
@@ -42,7 +42,7 @@ const CharacterSlider = ({ title = "Characters & Directors", item }) => {
           )}
         </div>
       </div>
-      <div className="ml-8 swipper-wrapper-box">
+      <div className="ml-4 md:ml-8 swipper-wrapper-box">
         <Swiper
           slidesPerView={7}
           spaceBetween={25}
@@ -71,7 +71,7 @@ const CharacterSlider = ({ title = "Characters & Directors", item }) => {
             return (
               <SwiperSlide key={cast.id || `${name}-${subtitle}`}>
                 <div className="flex flex-col items-center justify-center group cursor-pointer">
-                  <div className="w-[166px] h-[166px] rounded-full overflow-hidden border-2 border-transparent group-hover:border-pink-500 transition duration-300">
+                  <div className="w-[130px] h-[130px] md:w-[166px] md:h-[166px] rounded-full overflow-hidden border-2 border-transparent group-hover:border-pink-500 transition duration-300">
                     <img
                       loading="lazy"
                       decoding="async"

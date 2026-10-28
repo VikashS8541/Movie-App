@@ -168,21 +168,21 @@ const AdvanceFilterForm = ({ onFilter, mediaType = "movie", isFiltering = false 
 
   return (
     <section className="advance-filter-form relative">
-      <div className="advance-filter-form bg-[#030A1B] border border-[#228EE5] rounded-3xl p-8 py-16 relative">
-        <div className="absolute -top-5 left-8 flex items-center gap-3">
-          <span className="bg-[#228EE6] text-white px-6 py-3 rounded-full text-lg font-medium">
+      <div className="advance-filter-form bg-[#030A1B] border border-[#228EE5] rounded-3xl p-4 sm:p-8 py-16 relative">
+        <div className="absolute -top-5 left-4 sm:left-8 flex items-center gap-2 sm:gap-3">
+          <span className="bg-[#228EE6] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-base sm:text-lg font-medium">
             {optionsLoading ? "Loading..." : isFiltering ? "Filtering..." : "Advance Search"}
           </span>
           <button
             type="button"
             onClick={handleReset}
-            className="bg-[#228EE6] border border-[#228EE6] text-white px-5 py-3 rounded-full text-lg font-medium"
+            className="bg-[#228EE6] border border-[#228EE6] text-white px-4 sm:px-5 py-2 sm:py-3 rounded-full text-base sm:text-lg font-medium"
           >
             Clear
           </button>
         </div>
 
-        <div className="flex items-center gap-20 filter-image-box pb-10">
+        <div className="flex items-center gap-6 lg:gap-20 filter-image-box pb-10">
           <div className="hidden lg:block image-icon w-1/4">
             <img
               loading="lazy"
@@ -194,7 +194,7 @@ const AdvanceFilterForm = ({ onFilter, mediaType = "movie", isFiltering = false 
           </div>
 
           <div className="flex-1 search-field-box">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
               <div>
                 <label className="text-gray-400 text-sm mb-2 block">Year</label>
                 <select

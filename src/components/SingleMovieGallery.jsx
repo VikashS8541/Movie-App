@@ -12,7 +12,7 @@ const SingleMovieGallery = ({ movies = [] }) => {
   return (
     <section className="w-full py-10 relative single-movie-gallery">
       <div className="container mx-auto">
-        <div className="flex flex-wrap items-center justify-start gap-8">
+        <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 md:gap-8">
           {galleryMovies.map((movie) => {
             const imageSrc =
               movie.poster_path
@@ -25,7 +25,7 @@ const SingleMovieGallery = ({ movies = [] }) => {
             return (
               <div
                 key={movie.id}
-                className="relative group w-[400px] h-[500px] rounded-3xl overflow-hidden"
+                className="relative group w-full sm:w-[calc(50%-1rem)] lg:w-[400px] max-w-[400px] h-[420px] md:h-[500px] rounded-3xl overflow-hidden"
               >
                 <Link to={`/movies/${movie.id}`} className="block w-full h-full">
                   <img

@@ -5,9 +5,12 @@ import { FaPlus } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Link } from "react-router-dom";
+import useMovieData from "../context/useMovieData";
 import { fetchMovieSimilar, fetchSeriesSimilar, IMAGE_BASE_URL } from "../utility/useMovies";
 
 const SuggestionMovie = ({ item, type = "movie" }) => {
+  const { savedCollectionMovies, toggleCollectionMovie } = useMovieData();
+  const savedIds = savedCollectionMovies.map((saved) => saved.id);
   const [suggestions, setSuggestions] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -45,19 +48,19 @@ const SuggestionMovie = ({ item, type = "movie" }) => {
     <section className="w-full mt-10 suggestion-movie-banner relative">
       <div className="container">
         <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-white text-3xl md:text-5xl font-bold">
+          <h2 className="text-white text-2xl md:text-5xl font-bold">
             Suggestion Like “{title}”
           </h2>
         </div>
       </div>
 
-      <div className="ml-8 swipper-wrapper-box">
+      <div className="ml-4 md:ml-8 swipper-wrapper-box">
         {loading ? (
-          <p className="text-white ml-8">Loading suggestions...</p>
+          <p className="text-white ml-4 md:ml-8">Loading suggestions...</p>
         ) : error ? (
-          <p className="text-white ml-8">{error}</p>
+          <p className="text-white ml-4 md:ml-8">{error}</p>
         ) : currentSuggestions.length === 0 ? (
-          <p className="text-white ml-8">No suggestions available.</p>
+          <p className="text-white ml-4 md:ml-8">No suggestions available.</p>
         ) : (
           <Swiper
             modules={[Navigation]}
@@ -94,13 +97,19 @@ const SuggestionMovie = ({ item, type = "movie" }) => {
                         alt={movieTitle}
                         loading="lazy"
                         decoding="async"
-                        className="w-full h-[350px] object-cover rounded-[28px] transition duration-500 group-hover:scale-105"
+                        className="w-full h-[300px] md:h-[350px] object-cover rounded-[28px] transition duration-500 group-hover:scale-105"
                       />
                     </Link>
 
                     <div className="absolute pointer-events-none inset-0 bg-gradient-to-t from-black/50 to-transparent" />
 
-                    <button className="absolute top-5 left-5 w-12 h-12 rounded-2xl bg-black/40 backdrop-blur-md flex items-center justify-center text-white text-xl border border-white/10">
+                    <button
+                      type="button"
+                      onClick={() => toggleCollectionMovie(movie)}
+                      className={`absolute top-5 left-5 w-12 h-12 rounded-2xl backdrop-blur-md flex items-center justify-center text-white text-xl border border-white/10 ${
+                        savedIds.includes(movie.id) ? "bg-blue-500" : "bg-black/40"
+                      }`}
+                    >
                       <FaPlus />
                     </button>
                   </div>

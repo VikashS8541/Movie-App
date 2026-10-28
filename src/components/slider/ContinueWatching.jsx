@@ -14,8 +14,8 @@ const ContinueWatching = ({ title, linksText, linkShare = "" }) => {
   return (
     <section className="py-10 relative watching-section">
       <div className="container">
-        <div className="flex items-center mb-10 justify-between w-full title-links relative z-1">
-          <h2 className="text-5xl text-white font-semibold">{title}</h2>
+        <div className="flex items-center mb-6 md:mb-10 justify-between w-full title-links relative z-1">
+          <h2 className="text-3xl md:text-5xl text-white font-semibold">{title}</h2>
           {linksText.length > 0 && (
             <Link
               to={linkShare}
@@ -26,7 +26,7 @@ const ContinueWatching = ({ title, linksText, linkShare = "" }) => {
           )}
         </div>
       </div>
-      <div className="ml-8 swipper-wrapper-box">
+      <div className="ml-4 md:ml-8 swipper-wrapper-box">
         <Swiper
           modules={[Navigation]}
           navigation
@@ -71,7 +71,7 @@ const ContinueWatching = ({ title, linksText, linkShare = "" }) => {
                     </Link>
                   </div>
 
-                  <h3 className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white text-2xl font-medium whitespace-nowrap">
+                  <h3 className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white text-lg md:text-2xl font-medium whitespace-nowrap max-w-[90%] truncate">
                     {movieTitle}
                   </h3>
 

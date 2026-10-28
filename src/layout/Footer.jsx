@@ -29,12 +29,12 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full relative py-20">
+    <footer className="w-full relative py-10 md:py-20">
       
       <div className="container">
         
         {/* Footer Links */}
-        <div className="flex flex-wrap justify-center gap-x-10 gap-y-5 text-white font-medium text-lg">
+        <div className="flex flex-wrap justify-center gap-x-6 md:gap-x-10 gap-y-4 md:gap-y-5 text-white font-medium text-base md:text-lg">
           
           {footerLinks.map((item, index) => (
             <Link
@@ -50,13 +50,13 @@ const Footer = () => {
         </div>
 
         {/* Social Icons */}
-        <div className="flex items-center justify-center gap-8 mt-20">
+        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 mt-10 md:mt-20">
           
           {socialIcons.map((icon, index) => (
             <Link
               key={index}
               to="/"
-              className="w-14 h-14 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center text-white text-2xl hover:bg-blue-500 transition duration-300"
+              className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center text-white text-2xl hover:bg-blue-500 transition duration-300"
             >
               {icon}
             </Link>

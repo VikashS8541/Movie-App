@@ -8,11 +8,11 @@ const GeneresCategories = ({ genres }) => {
   return (
     <section className="categories relative">
       <div className="container">
-        <h2 className="text-5xl mb-10 font-semibold text-white">Genres</h2>
+        <h2 className="text-3xl md:text-5xl mb-6 md:mb-10 font-semibold text-white">Genres</h2>
         <div className="list">
           {genreList.length > 0 && (
             <div className="flex items-center justify-between mb-10 relative z-1">
-              <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide">
+              <div className="flex items-center gap-3 md:gap-4 flex-wrap">
                 {genreList.map((category, index) => (
                   <button
                     key={index}

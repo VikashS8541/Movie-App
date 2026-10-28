@@ -71,7 +71,7 @@ const [seriesData , setSeriesData] = useState([]);
       />
       <section className="golden-banner relative py-10">
         <div
-          className="golden-text-box bg-cover h-[576px] bg-center bg-no-repeat rounded-3xl overflow-hidden relative"
+          className="golden-text-box bg-cover h-[320px] md:h-[576px] bg-center bg-no-repeat rounded-3xl overflow-hidden relative"
           style={{
             backgroundImage: `url(${golden})`,
           }}
@@ -100,8 +100,8 @@ const [seriesData , setSeriesData] = useState([]);
       <QueryRelated />
       <section className="studios-section py-10 relative">
         <div className="container">
-          <h2 className="text-center text-5xl mb-16 font-semibold">Studios</h2>
-          <div className="max-w-5xl mx-auto studios-images grid grid-cols-5 gap-10 place-items-center">
+          <h2 className="text-center text-3xl md:text-5xl mb-8 md:mb-16 font-semibold">Studios</h2>
+          <div className="max-w-5xl mx-auto studios-images grid grid-cols-3 sm:grid-cols-5 gap-5 md:gap-10 place-items-center">
               {studiosImage.map((icon)=>(
                 <li className="list-none" key={icon.id}><img  loading="lazy" decoding="async" src={icon.image} alt={icon.text}/></li>
               ))}

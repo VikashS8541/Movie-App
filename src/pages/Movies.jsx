@@ -65,7 +65,7 @@ const Movies = () => {
   return (
     <section className="movies-list relative padding-top">
       <div className="container">
-        <h1 className="text-5xl mb-20 font-semibold">Movies</h1>
+        <h1 className="text-3xl md:text-5xl mb-10 md:mb-20 font-semibold">Movies</h1>
         <AdvanceFilterForm
           mediaType="movie"
           onFilter={handleFilter}

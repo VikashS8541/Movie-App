@@ -67,8 +67,8 @@ const SliderCardList = ({
   return (
     <section className="py-10 relative slider-component">
       <div className="container">
-        <div className="flex items-center mb-10 justify-between w-full title-links relative z-1">
-          <h2 className="text-5xl text-white font-semibold capitalize">{title}</h2>
+        <div className="flex items-center mb-6 md:mb-10 justify-between w-full title-links relative z-1">
+          <h2 className="text-3xl md:text-5xl text-white font-semibold capitalize">{title}</h2>
           {linksText.length > 0 && (
             <Link
               to={linkShare}
@@ -84,7 +84,7 @@ const SliderCardList = ({
               ❮
             </button>
 
-            <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide flex-wrap justify-center">
+            <div className="flex items-center gap-2 md:gap-4 overflow-x-auto scrollbar-hide flex-nowrap md:flex-wrap justify-start md:justify-center min-w-0 mx-2 md:mx-0">
               <button
                 onClick={() => handleActiveCat(null)}
                 className={`${
@@ -118,7 +118,7 @@ const SliderCardList = ({
           <div className="text-center text-gray-300 mb-8">No categories found.</div>
         )}
       </div>
-      <div className="ml-8 swipper-wrapper-box">
+      <div className="ml-4 md:ml-8 swipper-wrapper-box">
         {filteredData.length === 0 ? (
           <div className="text-center text-white py-20">No data found.</div>
         ) : (

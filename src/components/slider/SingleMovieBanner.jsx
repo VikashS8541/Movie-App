@@ -140,7 +140,7 @@ const SingleMovieBanner = ({ type: propType = null, item: parentItem, isLoading 
   return (
     <section className="w-full min-h-screen relative single-movie-banner">
       <div className="relative overflow-hidden">
-        <div className="banner-image relative h-[760px]">
+        <div className="banner-image relative h-[900px] sm:h-[820px] lg:h-[760px]">
           <img
             loading="lazy"
             decoding="async"
@@ -152,9 +152,9 @@ const SingleMovieBanner = ({ type: propType = null, item: parentItem, isLoading 
           <div className="absolute inset-0 bg-[#030A1B]/60"></div>
 
           <div className="container mx-auto">
-            <div className="banner-content-box absolute inset-0 z-30 flex items-center justify-between px-8 md:px-16">
-              <div className="left-side-banner-content max-w-[70%] text-white mt-20">
-                <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+            <div className="banner-content-box absolute inset-0 z-30 flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-between gap-4 px-4 sm:px-8 md:px-16 pb-48 lg:pb-0">
+              <div className="left-side-banner-content w-full lg:max-w-[70%] text-white mt-16 lg:mt-20">
+                <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight">
                   {title}
                 </h1>
 
@@ -174,7 +174,7 @@ const SingleMovieBanner = ({ type: propType = null, item: parentItem, isLoading 
                   <p className="mt-3 text-gray-300 text-sm">{genres}</p>
                 ) : null}
 
-                <div className="rating-icons-box mt-3 flex items-center justify-start gap-4">
+                <div className="rating-icons-box mt-3 flex flex-wrap items-center justify-start gap-4">
                 <div className=" rating-star text-yellow-400 text-lg flex items-center gap-3">
                   <span>{renderStars(item.vote_average)}</span>
                   <span className="text-gray-300">({item.vote_average ? item.vote_average.toFixed(1) : "N/A"}/10)</span>
@@ -195,7 +195,7 @@ const SingleMovieBanner = ({ type: propType = null, item: parentItem, isLoading 
                 </div>
               </div>
 
-              <div className="watch-preview-btn flex items-center gap-4 mt-20">
+              <div className="watch-preview-btn flex flex-wrap items-center gap-4 mt-4 lg:mt-20">
                 {isUpcoming ? (
                   <button
                     disabled
@@ -225,7 +225,7 @@ const SingleMovieBanner = ({ type: propType = null, item: parentItem, isLoading 
                   .filter(Boolean)
                   .slice(0, 5)
                   .map((image, idx) => (
-                    <div key={idx} className="h-[140px] overflow-hidden rounded-2xl">
+                    <div key={idx} className="h-[100px] md:h-[140px] overflow-hidden rounded-2xl">
                       <img
                         loading="lazy"
                         decoding="async"
@@ -241,15 +241,15 @@ const SingleMovieBanner = ({ type: propType = null, item: parentItem, isLoading 
         </div>
       </div>
 
-      <div className="about-movie-content px-8 md:px-16 pb-14 pt-10 text-white">
-        <h2 className="text-5xl font-bold mb-6">About {title}</h2>
+      <div className="about-movie-content px-4 sm:px-8 md:px-16 pb-14 pt-10 text-white">
+        <h2 className="text-3xl md:text-5xl font-bold mb-6">About {title}</h2>
 
         <p className="text-gray-300 leading-[32px] max-w-[1100px]">
           {overview}
         </p>
 
         {item.belongs_to_collection?.id && (
-          <div className="collection-summary mt-10 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-xl shadow-black/20">
+          <div className="collection-summary mt-10 rounded-3xl border border-white/10 bg-white/5 p-4 md:p-8 shadow-xl shadow-black/20">
             <div className="flex flex-col lg:flex-row gap-6 items-start">
               <img
                 loading="lazy"
